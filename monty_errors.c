@@ -1,8 +1,13 @@
 #include "monty.h"
-
-void monty_error(monty_t *monty){
-  switch (monty->error) {
-  case MONTY_ERROR_INVALID_OPCODE:
+/**
+ * monty_error - selects error message depending on error encountered
+ * @monty: blah
+ */
+void monty_error(monty_t *monty)
+{
+	switch (monty->error)
+	{
+		case MONTY_ERROR_INVALID_OPCODE:
 			printf("L%d: unknow instruction %s\n", monty->line, monty->token);
 			break;
 		case MONTY_ERROR_PUSH_MISSING_ARG:
@@ -11,11 +16,11 @@ void monty_error(monty_t *monty){
 			break;
 		case MONTY_ERROR_POP_EMPTY:
 			printf("L%d: can't pop an empty stack\n", monty->line);
-			break;		
+			break;
 		case MONTY_ERROR_PINT_EMPTY:
 			printf("L%d: can't %s, stack empty\n", monty->line, monty->token);
 			break;
-default:
+		default:
 			printf("L%d: unknown error\n", monty->line);
 	}
 }
