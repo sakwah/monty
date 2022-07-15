@@ -11,7 +11,6 @@
  */
 int main(int argc, char const *argv[])
 {
-	char *operand;
 	line_t *lines;
 	char **line;
 	int line_number;
