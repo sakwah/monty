@@ -1,7 +1,7 @@
 #include "monty.h"
 #define BUFSIZE 64
 
-
+char *operand;
 
 /**
  * main - monty interpreter
